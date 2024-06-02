@@ -7,21 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Obtém o elemento HTML do pedido
         const pedidoDiv = document.getElementById('pedido');
         // Obtém a mensagem "Nenhum item adicionado ao pedido"
-        const nenhumPedidoMensagem = document.getElementById('total-pagamento');
-
+        const totalPagamento = document.getElementById('total-pagamento');
+        totalPagamento.style.display='none'
         // Verifica se o pedido está vazio
         if (pedido.length === 0) {
-            // Se estiver vazio, exibe a mensagem "Nenhum item adicionado ao pedido"
-            nenhumPedidoMensagem.innerText = "Pedido Vazio";
-            nenhumPedidoMensagem.style.marginTop='10px';
+            // Se estiver vazio, exibe a mensagem "Pedido Vazio"
+            
+            innerHTML='Pedido vazio'
             const botaopag = document.getElementById('divbotaopag');
-            botaopag.style.display='none';
+            botaopag.style.display = 'none';
             pedidoDiv.style.display = 'none';
+            totalPagamento.style.display='block'
+            totalPagamento.style.marginTop='10px'
+            totalPagamento.innerHTML='Pedido vazio'
         } else {
             // Se não estiver vazio, exibe a div do pedido e atualiza seu conteúdo
-            nenhumPedidoMensagem.style.display = 'none';
             pedidoDiv.style.display = 'block';
-
+            totalPagamento.style.display='block'
             // Limpa o conteúdo anterior do elemento
             pedidoDiv.innerHTML = '';
 
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const descricao = document.createElement('p');
                 descricao.classList.add('descricao'); // Adiciona a classe para manter o mesmo estilo
                 descricao.textContent = item.descricao;
-                descricao.style.paddingBottom='10px';
+                descricao.style.paddingBottom = '10px';
                 conteudo.appendChild(descricao); // Adiciona a descrição à div de conteúdo
                 // Cria o preço do item do pedido
                 const preco = document.createElement('span');
@@ -60,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 botaoRemover.style.backgroundColor = 'red'; // Define a cor de fundo como vermelha
                 botaoRemover.style.padding = '7px';
                 botaoRemover.style.color = 'white';
-                botaoRemover.style.borderRadius='10px';
-                botaoRemover.style.borderStyle='none';
-                botaoRemover.style.marginLeft='10px';
+                botaoRemover.style.borderRadius = '10px';
+                botaoRemover.style.borderStyle = 'none';
+                botaoRemover.style.marginLeft = '10px';
                 botaoRemover.addEventListener('click', () => {
                     removerDoPedido(index); // Chama a função para remover o item do pedido
                 });
@@ -72,6 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Adiciona o item do pedido ao elemento HTML do pedido
                 pedidoDiv.appendChild(itemPedido);
             });
+
+            calcularTotalPagamento(pedido); // Chama a função para calcular o total do pagamento
+        }
+    }
+
+    // Função para calcular o total do pagamento
+    function calcularTotalPagamento(pedido) {
+        let total = 0;
+        pedido.forEach(item => {
+            total += item.preco * item.quantidade;
+        });
+        const totalPagamento = document.getElementById('total-pagamento');
+        if (pedido.length === 0) {
+            totalPagamento.innerHTML = ''; // Define como uma string vazia se o pedido estiver vazio
+        } else {
+            totalPagamento.innerHTML = `Total de R$ ${total.toFixed(2)}`;
         }
     }
 
