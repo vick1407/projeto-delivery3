@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xis da Ana - Pedido</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/xis-ana-logo.png" type="image/x-icon">
+</head>
+<style>
+    
+    #total-pagamento{
+        background-color: #813D28;
+        padding: 10px;
+        color: white;
+        font-weight: bolder;
+        font-size: 20px;
+        width: 200px;
+        margin: auto;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    #divbotaopag{
+        text-align: center;
+    }
+</style>
+<body>
+    <header>
+        <img id="logo" src="img/xis-ana-logo.png" alt="Logo Xis da Ana">
+    </header>
+    
+    <main class="pedido">
+        <div class="cardapiodiv">Pedido</div>
+        <div id="pedido">
+        </div>
+        <div id="total-pagamento" > 
+            <p class="nenhum-pedido" ></p>
+        </div>
+       <div id="divbotaopag"><input type="button" value="Pagar" class="botao" style="font-size: 20px; width: 150px; border-radius: 20px; margin-bottom: 100px;"></div>
+    </main>
+
+    <footer class="footercardapio">
+        <a href="cardapio.html" class="image"></a> 
+        <a href="pedido.html" class="image"></a> 
+        <a href="pedido.html" class="image"></a> 
+        <a href="pedido.html" class="image"></a> 
+    </footer>
+
+    <!-- Incluir o script do pedido -->
+    <script src="pedido.js"></script>
+</body>
+</html>

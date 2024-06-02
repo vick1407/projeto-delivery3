@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xis da Ana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/xis-ana-logo.png" type="image/x-icon">
+    <style>
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="img/xis-ana-logo.png" alt="">
+        <img id="pesquisa" src="img/icone-pesquisa.png" alt="">
+    </header>
+    
+    <div id="filtros" class="oculto">
+        <div class="tres-primeiros">
+            <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
+            <button class="filtro-btn" data-filtro="veganos">Vegano</button>
+            <button class="filtro-btn" data-filtro="xis">Xis</button>
+        </div>
+        <div class="dois-ultimos">
+            <button class="filtro-btn" data-filtro="fritas">Fritas</button>
+            <button class="filtro-btn" data-filtro="integral">Integral</button>
+        </div>
+    </div>
+
+    <main class="cardapio">
+        <div class="cardapiodiv">Cardápio</div>
+        <div id="xis-salada" class="blococardap" data-categoria="xis">
+            <img src="img/xis-salada.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis Salada</h2>
+                <hr>
+                <p class="descricao">Pão, tomate, alface, ovo, milho, ervilha, mussarela, presunto, ketchup e hambúrguer</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 22,00</span>
+            </div>
+        </div>
+        
+        <div id="xis-burguer" class="blococardap" data-categoria="xis">
+            <img src="img/xis-burguer.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis Burguer</h2>
+                <hr>
+                <p class="descricao">Pão, ovo, mussarela, presunto, ketchup e hambúrguer</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 20,00</span>
+            </div>
+        </div>
+        <div id="xis-frango" class="blococardap" data-categoria="xis">
+            <img src="img/xis-frango.jpeg" alt="">
+            <div class="conteudo">
+                <h2>Xis Frango</h2>
+                <hr>
+                <p class="descricao">Pão, frango, queijo, tomate, alface, maionese e ketchup</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 23,00</span>
+            </div>
+        </div>
+        <div id="xis-calabresa" class="blococardap" data-categoria="xis">
+            <img src="img/xis-calabresa.jpeg" alt="">
+            <div class="conteudo">
+                <h2>Xis Calabresa</h2>
+                <hr>
+                <p class="descricao">Pão, calabresa, queijo, tomate, alface, maionese e ketchup</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 25,00</span>
+            </div>
+        </div>
+        <div id="xis-4queijos" class="blococardap" data-categoria="xis">
+            <img src="img/xis-4queijos.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis 4 Queijos</h2>
+                <hr>
+                <p class="descricao">Pão, ovo, presunto, mussarela, cheddar, provolone, parmesão, ketchup e hambúrguer</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 26,00</span>
+            </div>
+        </div>
+        <div id="xis-bacon" class="blococardap" data-categoria="xis">
+            <img src="img/xis-bacon.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis Bacon</h2>
+                <hr>
+                <p class="descricao">Pão, calabresa, queijo, tomate, alface, maionese e ketchup</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 25,00</span>
+            </div>
+        </div>
+        <!--Bebidas-->
+        <div id="coca-lata" class="blococardap" data-categoria="bebidas">
+            <img src="img/coca-cola-lata.jpg" alt="">
+            <div class="conteudo">
+                <h2>Coca-cola </h2>
+                <hr>
+                <p class="descricao">Coca-cola em lata de 350ML</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 5,00</span>
+            </div>
+        </div>
+
+        <div id="pepsi-lata" class="blococardap" data-categoria="bebidas">
+            <img src="img/pepsi-lata.jpg" alt="">
+            <div class="conteudo">
+                <h2>Pepsi</h2>
+                <hr>
+                <p class="descricao">Pepsi em lata de 350ML</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 4,50</span>
+            </div>
+        </div>
+
+        <div id="pepsi-lata" class="blococardap" data-categoria="bebidas">
+            <img src="img/agua-garrafa.jpg" alt="">
+            <div class="conteudo">
+                <h2>Água</h2>
+                <hr>
+                <p class="descricao">Garrafa de água de 500ML</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 4,50</span>
+            </div>
+        </div>
+        <!--Fritas-->
+        <div id="fritas-pequena" class="blococardap" data-categoria="fritas">
+            <img src="img/fritas-pequena1.webp" alt="">
+            <div class="conteudo">
+                <h2>Fritas Pequena</h2>
+                <hr>
+                <p class="descricao">250g de batata frita</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 15,00</span>
+            </div>
+        </div>
+
+        <div id="fritas-pequena" class="blococardap" data-categoria="fritas">
+            <img src="img/fritas-media.jpg" alt="">
+            <div class="conteudo">
+                <h2>Fritas Média</h2>
+                <hr>
+                <p class="descricao">350g de batata frita</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 16,00</span>
+            </div>
+        </div>
+
+        <div id="fritas-grande" class="blococardap" data-categoria="fritas">
+            <img src="img/fritas-grande.jpg" alt="">
+            <div class="conteudo">
+                <h2>Fritas Grande</h2>
+                <hr>
+                <p class="descricao">500g de batata frita</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 17,50</span>
+            </div>
+        </div>
+
+        <!--Veganos-->
+        <div id="xis-vegano" class="blococardap" data-categoria="veganos">
+            <img src="img/xis-salada.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis Vegano</h2>
+                <hr>
+                <p class="descricao">Pão, tomate, alface, queijo vegano, presunto de soja, milho, ervilha e hamburguer de soja</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 26,00</span>
+            </div>
+        </div>
+
+        <!--Integral-->
+        <div id="xis-integral" class="blococardap" data-categoria="integral">
+            <img src="img/xis-salada.jpg" alt="">
+            <div class="conteudo">
+                <h2>Xis Integral</h2>
+                <hr>
+                <p class="descricao">Pão integral, tomate, alface, queijo, presunto, milho, ervilha e hamburguer.</p>
+                <button class="botao-add">Adicionar</button>
+                <span class="preco">R$ 22,00</span>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <footer>
+            <a href="#" class="image"></a> 
+            <a href="pedido.html" class="image"></a> 
+            <a href="pedido.html" class="image"></a> 
+            <a href="pedido.html" class="image"></a> 
+        </footer>
+        
+    </footer>
+
+    <script>
+        
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Evento de clique para a pesquisa
+    const pesquisa = document.getElementById("pesquisa");
+    pesquisa.addEventListener("click", () => {
+        const logo = document.getElementById("logo");
+        logo.style.display = "none";
+
+        let inputPesquisa = document.getElementById("inputPesquisa");
+        const filtrosTresPrimeiros = document.querySelector(".tres-primeiros");
+        const filtrosDoisUltimos = document.querySelector(".dois-ultimos");
+        const cardapioDiv = document.querySelector(".cardapiodiv");
+
+        if (!inputPesquisa) { 
+            const novoInputPesquisa = document.createElement("input");
+            novoInputPesquisa.type = "text";
+            novoInputPesquisa.placeholder = "Digite sua pesquisa...";
+            novoInputPesquisa.id = "inputPesquisa";
+            
+            const header = document.querySelector("header");
+            header.appendChild(novoInputPesquisa);
+
+            inputPesquisa = novoInputPesquisa; // Atualiza a referência ao inputPesquisa
+            
+            // Mostrar os botões de filtro
+            filtrosTresPrimeiros.style.display = "flex";
+            filtrosDoisUltimos.style.display = "flex";
+            
+            // Ocultar apenas o cardápio com a classe .cardapiodiv
+            cardapioDiv.style.display = "none";
+            
+        } else {
+            logo.style.display = "block";
+            inputPesquisa.remove();
+            
+            // Ocultar os botões de filtro
+            filtrosTresPrimeiros.style.display = "none";
+            filtrosDoisUltimos.style.display = "none";
+            
+            // Mostrar o cardápio com a classe .cardapiodiv
+            cardapioDiv.style.display = "block";
+        }
+
+        // Função para filtrar os resultados da pesquisa
+        function filtrarPesquisa() {
+            const termoPesquisa = inputPesquisa.value.toLowerCase();
+            const resultados = document.querySelectorAll('.blococardap');
+            let encontrouResultados = false; // Variável para verificar se algum resultado foi encontrado
+
+            resultados.forEach(resultado => {
+                const nome = resultado.querySelector('h2').textContent.toLowerCase();
+                if (nome.includes(termoPesquisa)) {
+                    resultado.style.display = 'block';
+                    encontrouResultados = true; // Marca que pelo menos um resultado foi encontrado
+                } else {
+                    resultado.style.display = 'none';
+                }
+            });
+
+          
+            
+        }
+
+        // Adicionar evento de input ao input de pesquisa
+        inputPesquisa.addEventListener('input', filtrarPesquisa);
+    });
+});
+
+
+
+    // Função para criar um botão de filtro
+    function criarFiltro(texto) {
+        const novoFiltro = document.createElement("button");
+        novoFiltro.classList.add("filtro-btn");
+        novoFiltro.textContent = texto;
+        novoFiltro.dataset.filtro = texto.toLowerCase(); // Define o filtro com base no texto
+        return novoFiltro;
+    }
+
+    // Adicionando evento de clique aos botões de filtro
+    const filtrosTresPrimeiros = document.querySelector(".tres-primeiros");
+    const filtrosDoisUltimos = document.querySelector(".dois-ultimos");
+
+    filtrosTresPrimeiros.addEventListener("click", (event) => {
+        if (event.target.classList.contains("filtro-btn")) {
+            const filtro = event.target.getAttribute("data-filtro");
+            filtrarCardapio(filtro);
+            destacarFiltro(event.target); // Destaca o filtro clicado
+        }
+    });
+
+    filtrosDoisUltimos.addEventListener("click", (event) => {
+        if (event.target.classList.contains("filtro-btn")) {
+            const filtro = event.target.getAttribute("data-filtro");
+            filtrarCardapio(filtro);
+            destacarFiltro(event.target); // Destaca o filtro clicado
+        }
+    });
+
+    // Função para filtrar o cardápio de acordo com o filtro selecionado
+    function filtrarCardapio(filtro) {
+        const itemsCardapio = document.querySelectorAll(".blococardap");
+
+        itemsCardapio.forEach(item => {
+            const categoria = item.dataset.categoria.toLowerCase();
+
+            if (filtro === "todos" || categoria === filtro) {
+                item.style.display = "flex";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+
+    // Função para destacar o filtro clicado
+    function destacarFiltro(filtroSelecionado) {
+        // Remove a classe de destaque de todos os filtros
+        const todosFiltros = document.querySelectorAll(".filtro-btn");
+        todosFiltros.forEach(filtro => filtro.classList.remove("filtro-selecionado"));
+        
+        // Adiciona a classe de destaque apenas ao filtro selecionado
+        filtroSelecionado.classList.add("filtro-selecionado");
+    }
+
+
+
+
+
+    </script>
+
+<script src="cardapio.js"></script>
+    
+</body>
+</html>
