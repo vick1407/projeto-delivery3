@@ -188,7 +188,7 @@
 
     </main>
     
-    <footer>
+
         <footer>
             <a href="#" class="image"></a> 
             <a href="pedido.html" class="image"></a> 
@@ -196,13 +196,12 @@
             <a href="pedido.html" class="image"></a> 
         </footer>
         
-    </footer>
+  
 
     <script>
         
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Evento de clique para a pesquisa
     const pesquisa = document.getElementById("pesquisa");
     pesquisa.addEventListener("click", () => {
         const logo = document.getElementById("logo");
@@ -224,39 +223,34 @@ document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector("header");
             header.appendChild(novoInputPesquisa);
 
-            inputPesquisa = novoInputPesquisa; // Atualiza a referência ao inputPesquisa
+            inputPesquisa = novoInputPesquisa; 
             
-            // Mostrar os botões de filtro
+            
             filtrosTresPrimeiros.style.display = "flex";
             filtrosDoisUltimos.style.display = "flex";
             
-            // Ocultar apenas o cardápio com a classe .cardapiodiv
+          
             cardapioDiv.style.display = "none";
             
         } else {
             logo.style.display = "block";
             fotocard.style.display='block'
             inputPesquisa.remove();
-            
-            // Ocultar os botões de filtro
             filtrosTresPrimeiros.style.display = "none";
             filtrosDoisUltimos.style.display = "none";
-            
-            // Mostrar o cardápio com a classe .cardapiodiv
             cardapioDiv.style.display = "block";
         }
 
-        // Função para filtrar os resultados da pesquisa
         function filtrarPesquisa() {
             const termoPesquisa = inputPesquisa.value.toLowerCase();
             const resultados = document.querySelectorAll('.blococardap');
-            let encontrouResultados = false; // Variável para verificar se algum resultado foi encontrado
+            let encontrouResultados = false; 
 
             resultados.forEach(resultado => {
                 const nome = resultado.querySelector('h2').textContent.toLowerCase();
                 if (nome.includes(termoPesquisa)) {
                     resultado.style.display = 'block';
-                    encontrouResultados = true; // Marca que pelo menos um resultado foi encontrado
+                    encontrouResultados = true; 
                 } else {
                     resultado.style.display = 'none';
                 }
@@ -266,23 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
         }
 
-        // Adicionar evento de input ao input de pesquisa
         inputPesquisa.addEventListener('input', filtrarPesquisa);
     });
 });
 
 
-
-    // Função para criar um botão de filtro
     function criarFiltro(texto) {
         const novoFiltro = document.createElement("button");
         novoFiltro.classList.add("filtro-btn");
         novoFiltro.textContent = texto;
-        novoFiltro.dataset.filtro = texto.toLowerCase(); // Define o filtro com base no texto
+        novoFiltro.dataset.filtro = texto.toLowerCase();
         return novoFiltro;
     }
 
-    // Adicionando evento de clique aos botões de filtro
     const filtrosTresPrimeiros = document.querySelector(".tres-primeiros");
     const filtrosDoisUltimos = document.querySelector(".dois-ultimos");
 
@@ -290,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains("filtro-btn")) {
             const filtro = event.target.getAttribute("data-filtro");
             filtrarCardapio(filtro);
-            destacarFiltro(event.target); // Destaca o filtro clicado
+            destacarFiltro(event.target);
         }
     });
 
@@ -298,11 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains("filtro-btn")) {
             const filtro = event.target.getAttribute("data-filtro");
             filtrarCardapio(filtro);
-            destacarFiltro(event.target); // Destaca o filtro clicado
+            destacarFiltro(event.target); 
         }
     });
 
-    // Função para filtrar o cardápio de acordo com o filtro selecionado
+  
     function filtrarCardapio(filtro) {
         const itemsCardapio = document.querySelectorAll(".blococardap");
 
@@ -317,13 +307,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Função para destacar o filtro clicado
+  
     function destacarFiltro(filtroSelecionado) {
-        // Remove a classe de destaque de todos os filtros
         const todosFiltros = document.querySelectorAll(".filtro-btn");
         todosFiltros.forEach(filtro => filtro.classList.remove("filtro-selecionado"));
-        
-        // Adiciona a classe de destaque apenas ao filtro selecionado
         filtroSelecionado.classList.add("filtro-selecionado");
     }
 
