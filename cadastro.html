@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,18 +13,63 @@
     </header>
     
     <main class="foto">
-        <h1>Cadastro</h1>
-        <form action="">
-        <input class="preencher" id="nome" name="nome" type="text" placeholder="Nome">
-        <input class="preencher" id="email" name="email" type="text" placeholder="Email">
-        <input class="preencher" id="senha" name="senha" type="password" placeholder="Senha">
-        <a href="cardapio.html"><input type="button" id="botao-cadastro" name="botao" value="Login" class="botao"></a>
+        <h1 id="h1cad">Cadastro</h1>
+        <form id="form" action="">
+            <input class="preencher required" oninput="nomeValidar()" id="nome" name="nome" type="text" placeholder="Nome" >
+            <span class="span-required" id="span-nome">Digite um nome com no mínimo 3 caracteres</span>
+            <input class="preencher required" oninput="emailValidar()" id="email" name="email" type="text" placeholder="Email" >
+            <span class="span-required" id="span-email">Digite um email válido</span>
+            <input class="preencher required" oninput="senhaValidar()" id="senha" name="senha" type="password" placeholder="Senha" >
+            <span class="span-required" id="span-senha">Digite uma senha com no mínimo 8 caracteres</span>
+            <a href="cardapio.html"><input type="button" id="botao-cadastro" name="botao" value="Login" class="botao"></a>
         </form>
     </main>
     
     <footer class="login">
     </footer>
+    <script>
+        const form = document.getElementById('form');
+        const campos = document.querySelectorAll('.required');
+        const spans = document.querySelectorAll('.span-required');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    <script src="xis.js"></script>
+        function setError(index, message){
+            spans[index].innerHTML = message;
+            spans[index].style.color = '#FFCC00';
+            campos[index].style.border = '3px solid #FFCC00';
+            spans[index].style.display = 'block';
+        }
+
+        function valido(index){
+            spans[index].innerHTML = 'Válido';
+            spans[index].style.color = '#3B642D';
+            campos[index].style.border = '3px solid #3B642D';
+            spans[index].style.display = 'block';
+        }
+
+        function nomeValidar(){
+            if(campos[0].value.length < 3){
+                setError(0, 'Nome com no mínimo 3 caracteres');
+            } else {
+                valido(0);
+            }
+        }
+        
+        function emailValidar() {
+            if (emailRegex.test(campos[1].value)) {
+                valido(1);
+            } else {
+                setError(1, 'Digite um email válido');
+            }
+        }
+
+        function senhaValidar() {
+            if(campos[2].value.length < 8){
+                setError(2, 'Senha com no mínimo 8 caracteres');
+            } else {
+                valido(2);
+            }
+        }
+    </script>
 </body>
 </html>
