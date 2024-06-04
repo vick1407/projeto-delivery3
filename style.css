@@ -35,7 +35,6 @@ header {
 
 
 footer {
-    position: fixed;
     bottom: 0;
 }
 
@@ -77,6 +76,10 @@ main > form > input.preencher {
 }
 
 
+.span-required{
+    display: none;
+}
+
 
 .botao {
     background-color: #FFCC00;
@@ -97,13 +100,14 @@ input {
     margin-top: 10px ;
 }
 
-.footercardapio{
-    display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    background-color: #3B642D;
-    padding: 10px 0; 
+.span-required{
+    font-size: 14px;
+    color: #FFCC00;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 10px;
 }
+
 
 .image-container {
     display: flex;
@@ -111,10 +115,7 @@ input {
 
 .image {
     margin-left: -5px;
-    width: 100px;
-    height: 100px; 
-    background-size: cover;
-    background-position: center;
+  
 }
 
 
@@ -255,6 +256,7 @@ main.cardapio {
 }
 
 @media  screen and (max-width:360px) {
+
     #inputPesquisa{
         width: 230px;
     }
@@ -262,6 +264,13 @@ main.cardapio {
     .preco{
         font-size: 14px;
     }
+}
+
+@media screen and (min-height: 660px) {
+    #h1cad{
+        margin-top: -12px;
+    }
+    
 }
 @media  screen and (min-width:400px) and (max-width:430px) {
     #inputPesquisa{
@@ -320,6 +329,7 @@ main.cardapio {
     div#total-pagamento{
         width: 200px;
         font-size: 24px;
+
     }
 
     #logo{
@@ -425,7 +435,6 @@ background-color: white;
 padding: 8px 16px;
 text-align: center;
 text-decoration: none;
-margin: 4px 2px;
 cursor: pointer;
 
 }
