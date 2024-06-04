@@ -13,11 +13,15 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="img/xis-ana-logo.png" alt="">
         <img id="pesquisa" src="img/icone-pesquisa.png" alt="">
+        <img id="logo" src="img/xis-ana-logo.png" alt="">
     </header>
+    <div id="juntando">
+        <img id="cardHamb" src="img/hamburguer-cardapio.jpg" alt="">
+        <div class="cardapiodiv">Cardápio</div>
+    </div>
     
-    <div id="filtros" class="oculto">
+    <div id="filtros" class="oculto" >
         <div class="tres-primeiros">
             <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
             <button class="filtro-btn" data-filtro="veganos">Vegano</button>
@@ -28,9 +32,8 @@
             <button class="filtro-btn" data-filtro="integral">Integral</button>
         </div>
     </div>
-
     <main class="cardapio">
-        <div class="cardapiodiv">Cardápio</div>
+       
         <div id="xis-salada" class="blococardap" data-categoria="xis">
             <img src="img/xis-salada.jpg" alt="">
             <div class="conteudo">
@@ -117,7 +120,7 @@
 
         <div id="pepsi-lata" class="blococardap" data-categoria="bebidas">
             <img src="img/agua-garrafa.jpg" alt="">
-            <div class="conteudo">
+                <div class="conteudo">
                 <h2>Água</h2>
                 <hr>
                 <p class="descricao">Garrafa de água de 500ML</p>
@@ -203,7 +206,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const pesquisa = document.getElementById("pesquisa");
     pesquisa.addEventListener("click", () => {
         const logo = document.getElementById("logo");
+        const fotocard=document.getElementById('cardHamb')
         logo.style.display = "none";
+        fotocard.style.display='none'
 
         let inputPesquisa = document.getElementById("inputPesquisa");
         const filtrosTresPrimeiros = document.querySelector(".tres-primeiros");
@@ -230,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
         } else {
             logo.style.display = "block";
+            fotocard.style.display='block'
             inputPesquisa.remove();
             
             // Ocultar os botões de filtro
