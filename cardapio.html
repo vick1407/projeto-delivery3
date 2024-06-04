@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const logo = document.getElementById("logo");
         const fotocard=document.getElementById('cardHamb')
         logo.style.display = "none";
-        fotocard.style.display='none'
+        
 
         let inputPesquisa = document.getElementById("inputPesquisa");
         const filtrosTresPrimeiros = document.querySelector(".tres-primeiros");
@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cardapioDiv = document.querySelector(".cardapiodiv");
 
         if (!inputPesquisa) { 
+            fotocard.style.display='none'
             const novoInputPesquisa = document.createElement("input");
             novoInputPesquisa.type = "text";
             novoInputPesquisa.placeholder = "Digite sua pesquisa...";
